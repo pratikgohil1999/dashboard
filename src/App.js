@@ -15,11 +15,9 @@ class App extends React.Component {
             <Route exact path="/">
               <Register />
             </Route>
-            <Provider>
-              <Route exact path="/login">
-                <Login />
-              </Route>
-            </Provider>
+            <Route exact path="/login">
+              <Login />
+            </Route>
             <Route exact path="/dashboard">
               <Dashboard />
             </Route>

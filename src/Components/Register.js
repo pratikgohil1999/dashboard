@@ -93,7 +93,10 @@ export class Register extends React.Component {
 
     handleClick = (e) => {
         const { history } = this.props;
-        if (history) history.push('/login');
+        if (history) history.push({
+            pathname: '/login',
+            state: this.state.list
+        });
     }
 
 
@@ -102,47 +105,46 @@ export class Register extends React.Component {
             data: this.state.list
         }
         return (
-            <Provider
-                value={mycontext, console.log('hellow:', mycontext)}>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <h1>Sign Up Here</h1>
-                        <input
-                            name="name"
-                            placeholder="name"
-                            value={this.state.currentName}
-                            onChange={this.handleName}
-                        />
-                        <div style={{ fontSize: 12, color: "red" }}>
-                            {this.state.nameError}
-                        </div>
+            // <Provider
+            //     value={mycontext, console.log('hellow:', mycontext)}>
+            <form onSubmit={this.handleSubmit}>
+                <div>
+                    <h1>Sign Up Here</h1>
+                    <input
+                        name="name"
+                        placeholder="name"
+                        value={this.state.currentName}
+                        onChange={this.handleName}
+                    />
+                    <div style={{ fontSize: 12, color: "red" }}>
+                        {this.state.nameError}
                     </div>
-                    <div>
-                        <input
-                            name="email"
-                            placeholder="email"
-                            value={this.state.currentEmail}
-                            onChange={this.handleEmail}
-                        />
-                        <div style={{ fontSize: 12, color: "red" }}>
-                            {this.state.emailError}
-                        </div>
+                </div>
+                <div>
+                    <input
+                        name="email"
+                        placeholder="email"
+                        value={this.state.currentEmail}
+                        onChange={this.handleEmail}
+                    />
+                    <div style={{ fontSize: 12, color: "red" }}>
+                        {this.state.emailError}
                     </div>
-                    <div>
-                        <input
-                            // type="password"
-                            name="password"
-                            placeholder="password"
-                            value={this.state.currentPassword}
-                            onChange={this.handlePassword}
-                        />
-                        <div style={{ fontSize: 12, color: "red" }}>
-                            {this.state.passwordError}
-                        </div>
+                </div>
+                <div>
+                    <input
+                        // type="password"
+                        name="password"
+                        placeholder="password"
+                        value={this.state.currentPassword}
+                        onChange={this.handlePassword}
+                    />
+                    <div style={{ fontSize: 12, color: "red" }}>
+                        {this.state.passwordError}
                     </div>
-                    <button type="submit">Register</button>
-                    <button onClick={(e) => this.handleClick(e)}>Go to loginPage</button>
-                </form>
+                </div>
+                <button type="submit">Register</button>
+                <button onClick={(e) => this.handleClick(e)}>Go to loginPage</button>
                 {
                     console.log(this.state),
                     this.state.list.map(t => (
@@ -151,7 +153,9 @@ export class Register extends React.Component {
                         </div>
                     ))
                 }
-            </Provider >
+            </form>
+
+            // </Provider >
         );
     }
 }
