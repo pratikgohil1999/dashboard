@@ -1,4 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@material-ui/core";
+import Button from 'react-bootstrap/Button'
+import Alert from '@material-ui/lab/Alert';
 import MaterialTable from "material-table";
 import React from "react";
 import { withRouter } from "react-router-dom";
@@ -118,6 +120,7 @@ class Dashboard extends React.Component {
     return (
       <div className="App">
         <h1>Dashboard here</h1>
+        <Alert severity="success">This is a success alert — Hello-{this.state.email} User</Alert>
         <h2>add here</h2>
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="enter Project "
@@ -128,7 +131,7 @@ class Dashboard extends React.Component {
             value={this.state.currentItem.date}
             onChange={(e) => this.handleDate(e)}>
           </input>
-          <button type="submit">add</button>
+          <Button type="submit">add</Button>
         </form>
 
 
@@ -145,7 +148,7 @@ class Dashboard extends React.Component {
           value={this.state.currentDate}
           onChange={(e) => this.setState({ currentDate: e.target.value })}>
         </input>
-        <button onClick={(e) => this.handleEdit(e)}>after edit click here</button>
+        <Button onClick={(e) => this.handleEdit(e)}>after edit click here</Button>
 
         {/* <h2>Delete Item</h2>
                 <input type="text"
@@ -211,11 +214,11 @@ class Dashboard extends React.Component {
                     const k = row.id
                     this.setState({ currentId: k })
                   }}>edit</button>
-                  <button onClick={(e) => {
+                  <Button variant="danger" onClick={(e) => {
                     const k = row.id
                     this.setState({ deleteId: k })
                     this.deleteItem(e)
-                  }}>delete</button>
+                  }}>delete</Button>
                 </TableRow>
               ))}
             </TableBody>

@@ -1,6 +1,7 @@
+import Button from 'react-bootstrap/Button'
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Provider } from "../Context/Context";
+// import { Provider } from "../Context/Context";
 import './App.css';
 
 
@@ -101,9 +102,9 @@ export class Register extends React.Component {
 
 
     render() {
-        const mycontext = {
-            data: this.state.list
-        }
+        // const mycontext = {
+        //     data: this.state.list
+        // }
         return (
             // <Provider
             //     value={mycontext, console.log('hellow:', mycontext)}>
@@ -143,8 +144,10 @@ export class Register extends React.Component {
                         {this.state.passwordError}
                     </div>
                 </div>
-                <button type="submit">Register</button>
-                <button onClick={(e) => this.handleClick(e)}>Go to loginPage</button>
+                <h2 />
+                <h2 />
+                <Button type="submit">Register</Button>
+                <Button variant="success" onClick={(e) => this.handleClick(e)}>Go to loginPage</Button>
                 {/* {
                     console.log(this.state),
                     this.state.list.map(t => (

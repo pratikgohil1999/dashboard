@@ -2,6 +2,7 @@ import React from "react";
 import { Consumer } from "../Context/Context";
 import { withRouter } from 'react-router-dom';
 import './App.css';
+import Button from 'react-bootstrap/Button'
 
 class Login extends React.Component {
     constructor(props) {
@@ -60,10 +61,10 @@ class Login extends React.Component {
                             this.setState({ password: e.target.value })}>
                     </input>
                 </p>
-                <button onClick={(e) => {
+                <Button onClick={(e) => {
                     this.state.login = 'false'
                     this.handleClick(e)
-                }}>login</button>
+                }}>login</Button>
                 <p>Users id and Password
                     {this.state.list.map(t => (
                     <p>{t.email} and {t.password}</p>

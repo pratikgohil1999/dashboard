@@ -5,6 +5,7 @@ import Dashboard from "./Components/Dashboard";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import { Provider } from "./Context/Context";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
   render() {
