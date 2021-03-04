@@ -145,14 +145,15 @@ export class Register extends React.Component {
                 </div>
                 <button type="submit">Register</button>
                 <button onClick={(e) => this.handleClick(e)}>Go to loginPage</button>
-                {
+                {/* {
                     console.log(this.state),
                     this.state.list.map(t => (
                         <div>
                             {t.name}
                         </div>
                     ))
-                }
+                } */}
+                <p>(hint:name shouln't be empty and email must contains "@")</p>
             </form>
 
             // </Provider >

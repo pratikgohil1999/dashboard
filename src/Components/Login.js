@@ -64,10 +64,10 @@ class Login extends React.Component {
                     this.state.login = 'false'
                     this.handleClick(e)
                 }}>login</button>
-                <p>
+                <p>Users id and Password
                     {this.state.list.map(t => (
-                        <p>{t.email} and {t.password}</p>
-                    ))}
+                    <p>{t.email} and {t.password}</p>
+                ))}
                 </p>
                 <h2>status:{this.state.login}</h2>
             </div>
